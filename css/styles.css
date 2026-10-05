@@ -1,0 +1,137 @@
+/* ==========================================================
+   styles.css · Web de perfil de Alberto
+   Estilos de la página de presentación publicada en
+   GitHub Pages. Diseño de una sola columna, centrado.
+   ========================================================== */
+
+/* === Variables de color y tipografía ===
+   Centralizar los colores facilita cambiar el tema completo
+   modificando solo estas líneas. */
+:root {
+  --color-fondo: #f7f6f2;
+  --color-tarjeta: #ffffff;
+  --color-texto: #2b3440;
+  --color-suave: #5f6b78;
+  --color-acento: #2e7d4f;      /* verde: color principal de la web */
+  --color-acento-hover: #1f5c39;
+  --color-borde: #e1ded5;
+  --radio: 12px;
+  --fuente: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* === Modo oscuro ===
+   Se aplica automáticamente si el sistema operativo
+   del visitante usa el tema oscuro. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-fondo: #16202b;
+    --color-tarjeta: #1f2a36;
+    --color-texto: #e6edf3;
+    --color-suave: #a3b1bf;
+    --color-acento: #7ec699;
+    --color-acento-hover: #a8dcb9;
+    --color-borde: #2f3d4c;
+  }
+}
+
+/* === Estilos base ===
+   box-sizing hace que el padding no aumente el ancho real
+   de los elementos. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  max-width: 800px;   /* columna estrecha para que se lea mejor */
+  margin: 0 auto;     /* centra el contenido */
+  padding: 2rem 1rem;
+}
+
+/* === Cabecera: foto, nombre y cargo === */
+header {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;          /* recorta la foto sin deformarla */
+  border-radius: 50%;         /* foto redonda */
+  border: 4px solid var(--color-acento);
+}
+
+header h1 {
+  margin: 1rem 0 0.25rem;
+  font-size: 2.5rem;
+}
+
+header p {
+  margin: 0;
+  color: var(--color-suave);
+}
+
+/* === Secciones del contenido principal ===
+   Cada sección se muestra como una tarjeta. */
+main section {
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+}
+
+main h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: var(--color-acento);
+}
+
+main ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+main li {
+  margin-bottom: 0.4rem;
+}
+
+/* === Enlaces ===
+   El subrayado aparece solo al pasar el ratón para que
+   el texto se vea más limpio. */
+a {
+  color: var(--color-acento);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-acento-hover);
+  text-decoration: underline;
+}
+
+/* === Pie de página === */
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  color: var(--color-suave);
+  border-top: 1px solid var(--color-borde);
+}
+
+/* === Móviles ===
+   En pantallas pequeñas se reducen el título y los márgenes
+   interiores de las tarjetas. */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  main section {
+    padding: 1.25rem;
+  }
+}
